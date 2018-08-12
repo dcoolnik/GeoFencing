@@ -1,19 +1,25 @@
 {
-  "prepare_queue": {
-    "installed": [],
-    "uninstalled": []
-  },
-  "config_munge": {
-    "files": {}
-  },
-  "installed_plugins": {
-    "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.geo.geofencing"
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.geo.geofencing"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.geo.geofencing"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.geo.geofencing"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.geo.geofencing"
+        }
     }
-  },
-  "dependent_plugins": {
-    "cordova-plugin-compat": {
-      "PACKAGE_NAME": "com.geo.geofencing"
-    }
-  }
 }
