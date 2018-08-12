@@ -3,7 +3,8 @@ module.exports = [];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-geolocation": "4.0.1"
+    "cordova-plugin-compat": "1.2.0",
+    "cordova-plugin-geolocation": "2.4.3"
 }
 // BOTTOM OF METADATA
 });

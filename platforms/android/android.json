@@ -32,6 +32,28 @@
             }
           ]
         }
+      },
+      "undefined": {
+        "parents": {
+          "/manifest": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_LOCATION_EXTRA_COMMANDS\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-feature android:name=\"android.hardware.location.gps\" />",
+              "count": 1
+            }
+          ]
+        }
       }
     }
   },
@@ -58,6 +80,6 @@
     }
   ],
   "plugin_metadata": {
-    "cordova-plugin-geolocation": "4.0.1"
+    "cordova-plugin-geolocation": "2.4.3"
   }
 }
