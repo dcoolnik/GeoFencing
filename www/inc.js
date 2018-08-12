@@ -1,4 +1,19 @@
 // PhoneGap
+function testService() {
+	console.log("in test service")
+	alert("TestService")
+	var xhrGet = new XMLHttpRequest();
+	var url = "http://4652a01a.ngrok.io/GeoFencing/webresources/geo/testService";
+	xhrGet.open("GET", url, true);
+	xhrGet.onreadystatechange = function () {
+		if (xhrGet.readyState == 4 && xhrGet.status == 200) {
+			alert("Response: " + xhrGet.responseText)
+		}
+	}
+	xhrGet.send();
+}
+
+
 function getLocation() {
 	console.log("in getlocation")
 	navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
@@ -28,8 +43,8 @@ function onSuccess(position) {
 	// var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
 
-	xhr = new XMLHttpRequest();
-	var url = "http://1ace9e36.ngrok.io/GeoFencing/webresources/geo/submitGeoCord";
+	var xhr = new XMLHttpRequest();
+	var url = "http://4652a01a.ngrok.io/GeoFencing/webresources/geo/submitGeoCord";
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhr.onreadystatechange = function () {

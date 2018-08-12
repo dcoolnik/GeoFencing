@@ -12,11 +12,5 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <config-file mode="merge" parent="/manifest" platform="android">
-        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-        <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-        <uses-feature android:name="android.hardware.location.gps" />
-    </config-file>
     <preference name="loglevel" value="DEBUG" />
 </widget>
