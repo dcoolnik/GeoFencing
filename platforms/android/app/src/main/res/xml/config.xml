@@ -19,5 +19,6 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <preference name="loglevel" value="DEBUG" />
 </widget>

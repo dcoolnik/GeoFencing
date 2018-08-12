@@ -1,4 +1,5 @@
 // PhoneGap
+
 function testService() {
 	console.log("in test service")
 	alert("TestService")
@@ -12,7 +13,6 @@ function testService() {
 	}
 	xhrGet.send();
 }
-
 
 function getLocation() {
 	console.log("in getlocation")

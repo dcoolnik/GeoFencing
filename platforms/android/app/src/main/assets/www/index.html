@@ -21,12 +21,12 @@
     <script src="inc.js"></script>
 
     <script type="text/javascript" charset="utf-8">
-        // $(document).bind('pageload', function (event, data) {
-        //     console.log("calling getlocation")
-        //     setInterval(getLocation, 5000);
-        // });
         alert("in index.html")
-        testService();
+        $(document).bind('pageload', function (event, data) {
+            console.log("calling getlocation")
+            setInterval(getLocation, 5000);
+        });
+        // testService();
     </script>
 </head>
 
