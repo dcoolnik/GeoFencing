@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>Geofence App</title>
+
+    <script src="phonegap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsGjCZ7iNKM1ZdNMMZA9iUPUzB6-pi-LY&sensor=true">
+    </script>
+
+    <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+    <script src="jquery-1.7.2.min.js"></script>
+    <script src="jquery.mobile-1.2.0.min.js"></script>
+
+    <script src="http://192.168.0.25:8080/target/target-script-min.js#anonymous"></script>
+
+    <!-- <script src="bg-GeoLocation.js"></script> -->
+    <script src="inc.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        $(document).bind('pageload', function (event, data) {
+            console.log("calling getlocation")
+            setInterval(getLocation, 5000);
+        });
+    </script>
+</head>
+
+<body>
+    <div data-role="page" id="page1">
+        <div data-theme="b" data-role="header">
+            <h3>
+                Geofence
+            </h3>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" data-divider-theme="d" data-inset="true">
+                <li data-theme="c">
+                    <a href="location.html" data-transition="slide">
+                        Location
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div data-theme="b" data-role="footer" data-position="fixed">
+            <h3>
+                #nik.h
+            </h3>
+        </div>
+    </div>
+</body>
+
+</html>

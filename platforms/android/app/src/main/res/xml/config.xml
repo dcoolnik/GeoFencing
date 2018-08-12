@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.geo.geofencing" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    </feature>
+    <name>GeoFencing</name>
+    <description>
+        App for geofencing
+    </description>
+    <author email="dafale.nikhil@gmail.com" href="">
+        #n!k.h
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="loglevel" value="DEBUG" />
+</widget>
