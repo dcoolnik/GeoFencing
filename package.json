@@ -12,6 +12,7 @@
     }
   },
   "dependencies": {
+    "cordova-android": "^7.0.0",
     "cordova-browser": "~5.0.4",
     "cordova-plugin-geolocation": "~4.0.1"
   }
