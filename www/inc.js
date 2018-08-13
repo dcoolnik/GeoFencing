@@ -1,5 +1,4 @@
 // PhoneGap
-
 function testService() {
 	console.log("in test service")
 	alert("TestService")
@@ -33,16 +32,6 @@ function onSuccess(position) {
 		'Speed: ' + position.coords.speed + '<br />' +
 		'Timestamp: ' + position.timestamp + '<br />');
 
-	var latitude = position.coords.latitude;
-	var longitude = position.coords.longitude;
-	// var mapOptions = {
-	// 	center: new google.maps.LatLng(latitude, longitude),
-	// 	zoom: 15,
-	// 	mapTypeId: google.maps.MapTypeId.ROADMAP
-	// };
-	// var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
-
 	var xhr = new XMLHttpRequest();
 	var url = "http://4652a01a.ngrok.io/GeoFencing/webresources/geo/submitGeoCord";
 	xhr.open("POST", url, true);
@@ -72,4 +61,49 @@ function onError(error) {
 	var element = document.getElementById('geolocation');
 	element.innerHTML = 'code: ' + error.code + '\n' +
 		'message: ' + error.message + '\n';
+}
+
+function sendData() {
+	var username = document.forms['loginForm'].elements['username'].value;
+	var password = document.forms['loginForm'].elements['password'].value;
+
+	var loginRequest = new XMLHttpRequest();
+	var url = "http://4652a01a.ngrok.io/GeoFencing/webresources/geo/login";
+	loginRequest.open("POST", url, true);
+	loginRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	loginRequest.onreadystatechange = function () {
+		if (loginRequest.readyState == 4 && loginRequest.status == 200) {
+			var response = loginRequest.responseText;
+			//alert("user: " + response)
+			if (response == "admin") {
+				var userListRequest = new XMLHttpRequest();
+				var url = "http://4652a01a.ngrok.io/GeoFencing/webresources/geo/getUserList";
+				userListRequest.open("GET", url, true);
+				userListRequest.onreadystatechange = function () {
+					if (userListRequest.readyState == 4 && userListRequest.status == 200) {
+						var response = JSON.parse(userListRequest.response);
+						alert("userList: " + JSON.stringify(response))
+						populateTable(response);
+					}
+				}
+				userListRequest.send();
+			}
+		}
+	}
+	loginRequest.send("username=" + username + "&password=" + password);
+}
+
+function populateTable(userList) {
+	var $table = $("<table></table>");
+	var $header = $("<th>Available Users</th>");
+	$table.append($header);
+
+	for (var i = 0; i < userList.length; i++) {
+		var user = userList[i];
+		var $line = $("<tr></tr>");
+		$line.append($("<td></td>").html(user));
+		$table.append($line);
+	}
+
+	$table.appendTo( $( "#userListTable" ) );
 }

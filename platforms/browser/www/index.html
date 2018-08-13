@@ -16,15 +16,13 @@
     <script src="jquery.mobile-1.2.0.min.js"></script>
 
     <script src="http://192.168.0.25:8080/target/target-script-min.js#anonymous"></script>
-
-    <!-- <script src="bg-GeoLocation.js"></script> -->
     <script src="inc.js"></script>
 
     <script type="text/javascript" charset="utf-8">
-        alert("in index.html")
         $(document).bind('pageload', function (event, data) {
             console.log("calling getlocation")
-            setInterval(getLocation, 5000);
+            getLocation();
+            setInterval(getLocation, 10000);
         });
         // testService();
     </script>
@@ -46,6 +44,18 @@
                 </li>
             </ul>
         </div>
+        <form name="loginForm" action="location.html" method="post">
+            <label for="username">
+                <b>Username</b>
+            </label>
+            <input type="text"  style="width:75%;" placeholder="Enter Username" name="username" required>
+
+            <label for="password">
+                <b>Password</b>
+            </label>
+            <input type="password" style="width:75%;" placeholder="Enter Password" name="password" required>
+            <input type="submit" value="Submit" onclick="sendData()">
+        </form>
         <div data-theme="b" data-role="footer" data-position="fixed">
             <h3>
                 #nik.h
