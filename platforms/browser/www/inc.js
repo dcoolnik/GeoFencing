@@ -32,6 +32,15 @@ function onSuccess(position) {
 		'Speed: ' + position.coords.speed + '<br />' +
 		'Timestamp: ' + position.timestamp + '<br />');
 
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+	var mapOptions = {
+		center: new google.maps.LatLng(latitude, longitude),
+		zoom: 15,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+	var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
 	var xhr = new XMLHttpRequest();
 	var url = "http://4652a01a.ngrok.io/GeoFencing/webresources/geo/submitGeoCord";
 	xhr.open("POST", url, true);
@@ -105,5 +114,5 @@ function populateTable(userList) {
 		$table.append($line);
 	}
 
-	$table.appendTo( $( "#userListTable" ) );
+	$table.appendTo($("#userListTable"));
 }
